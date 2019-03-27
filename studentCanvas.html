@@ -78,16 +78,18 @@
         })
 
         window.addEventListener('touchmove', function(e){
-            if (e.target == ctx){
-                e.preventDefault;
-            }
             x = e.pageX;
             y = e.pageY;
             drawCircle()
         })
 
+        document.body.addEventListener("touchmove", function (e) {
+            if (e.target == canvas) {
+                e.preventDefault();
+            }
+        }, false);
+
     </script>
-    scroll changes live
 
     <br><input type="file" id="myFile" size="50" onchange="myFunction()"><br>
 

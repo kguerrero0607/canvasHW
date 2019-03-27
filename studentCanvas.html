@@ -35,6 +35,12 @@
             ctx.fill();
         }
 
+        // window.addEventListener('resize', function(e) {
+        //     ctx.width = window.innerWidth;
+        //     ctx.height = window.innerHeight;
+        //     console.log(ctx.width)
+        // })
+
         window.addEventListener('mousemove', function (e) {
             x = e.pageX;
             y = e.pageY;
@@ -65,6 +71,10 @@
             else if (e.keyCode == '32') {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
             }
+        })
+
+        window.addEventListener('orientationchange', function(){
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
         })
 
     </script>

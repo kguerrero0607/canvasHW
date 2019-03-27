@@ -82,6 +82,11 @@
             drawCircle()
         })
 
+        window.addEventListener('resize', function(){
+            canvas.width = window.innerWidth * .8;
+            canvas.height = window.innerHeight * .8;
+        })
+
     </script>
 
     <br><input type="file" id="myFile" size="50" onchange="myFunction()"><br>

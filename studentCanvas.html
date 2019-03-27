@@ -81,8 +81,8 @@
             y = e.pageY;
             drawCircle()
 
-            e.preventDefault();
-        })
+            event.preventDefault();
+        }, false)
 
         window.addEventListener('resize', function(){
             canvas.width = window.innerWidth * .8;

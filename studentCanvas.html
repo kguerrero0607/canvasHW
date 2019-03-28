@@ -17,6 +17,7 @@
     <canvas id="canvas" width="500" height="500">
         An alternative text describing what your canvas displays.
     </canvas>
+    <br>Select color:<input type='color' value='#FF0000' id='colorWheel'>
 
     <script>
         var canvas = document.querySelector('canvas');
@@ -81,12 +82,18 @@
             y = e.pageY;
             drawCircle()
 
-            event.preventDefault();
+            event.preventDefault(); // from https://zipso.net/a-simple-touchscreen-sketchpad-using-javascript-and-html5/
         }, false)
 
         window.addEventListener('resize', function(){
             canvas.width = window.innerWidth * .8;
             canvas.height = window.innerHeight * .8;
+        })
+
+        var colorWheel = document.querySelector('#colorWheel')
+
+        colorWheel.addEventListener('input', function(e){
+            color = colorWheel.value;
         })
 
     </script>

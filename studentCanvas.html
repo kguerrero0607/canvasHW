@@ -21,7 +21,7 @@
 
     <script>
         var canvas = document.querySelector('canvas');
-    	var ctx = canvas.getContext('2d');
+        var ctx = canvas.getContext('2d');
 
         canvas.width = window.innerWidth * .8;
         canvas.height = window.innerHeight * .8;
@@ -32,52 +32,46 @@
         var color = 'red';
 
 
-        function drawCircle(){
+        function drawCircle() {
             ctx.beginPath();
             ctx.fillStyle = color;
-            ctx.arc(x,y,radius,0,2*Math.PI);
+            ctx.arc(x, y, radius, 0, 2 * Math.PI);
             ctx.fill();
         }
 
-        window.addEventListener('mousemove', function (e) {
+        window.addEventListener('mousemove', function(e) {
             x = e.pageX;
             y = e.pageY;
             drawCircle()
         })
 
-        window.addEventListener('keydown', function(e){
-            if(e.keyCode == '66'){
+        window.addEventListener('keydown', function(e) {
+            if (e.keyCode == '66') {
                 color = 'blue';
-            }
-            else if (e.keyCode == '71') {
+            } else if (e.keyCode == '71') {
                 color = 'green';
-            }
-            else if (e.keyCode == '82') {
+            } else if (e.keyCode == '82') {
                 color = 'red';
-            }
-            else if (e.keyCode == '89') {
+            } else if (e.keyCode == '89') {
                 color = 'yellow';
-            }
-            else if (e.keyCode == '38') {
+            } else if (e.keyCode == '38') {
                 radius += 5;
-            }
-            else if (e.keyCode == '40') {
-                if (radius > 5){
+            } else if (e.keyCode == '40') {
+                if (radius > 5) {
                     radius -= 5;
                 }
-            }
-            else if (e.keyCode == '32') {
+            } else if (e.keyCode == '32') {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
             }
         })
 
-        window.addEventListener('orientationchange', function(){
+        window.addEventListener('orientationchange', function() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             canvas.width = window.innerWidth * .8;
             canvas.height = window.innerHeight * .8;
         })
 
-        canvas.addEventListener('touchmove', function(e){
+        canvas.addEventListener('touchmove', function(e) {
             x = e.pageX;
             y = e.pageY;
             drawCircle()
@@ -85,20 +79,17 @@
             event.preventDefault(); // from https://zipso.net/a-simple-touchscreen-sketchpad-using-javascript-and-html5/
         }, false)
 
-        window.addEventListener('resize', function(){
+        window.addEventListener('resize', function() {
             canvas.width = window.innerWidth * .8;
             canvas.height = window.innerHeight * .8;
         })
 
         var colorWheel = document.querySelector('#colorWheel')
 
-        colorWheel.addEventListener('input', function(e){
+        colorWheel.addEventListener('input', function(e) {
             color = colorWheel.value;
         })
-
     </script>
-
-    <br><input type="file" id="myFile" size="50" onchange="myFunction()"><br>
 
 </body>
 
